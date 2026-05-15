@@ -8,14 +8,26 @@ const projectItems = document.querySelectorAll(".projects");
 const lightModeBtn = document.querySelector(".lightmode");
 const darkModeBtn = document.querySelector(".darkmode");
 
-function Sidebar() {
+function closeSidebar() {
     sidebar.classList.add("hide");
     menuBtn.style.display = "block";
 }
 
-function toggleSidebar() {
+function openSidebar() {
     sidebar.classList.remove("hide");
     menuBtn.style.display = "none";
+}
+
+function Sidebar() {
+    closeSidebar();
+}
+
+function toggleSidebar() {
+    if (sidebar.classList.contains("hide")) {
+        openSidebar();
+    } else {
+        closeSidebar();
+    }
 }
 
 function dropdown_btn() {
@@ -41,3 +53,5 @@ function setTheme(theme) {
     lightModeBtn.classList.toggle("active", !isDark);
     darkModeBtn.classList.toggle("active", isDark);
 }
+
+closeSidebar();

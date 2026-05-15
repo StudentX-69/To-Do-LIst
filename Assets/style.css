@@ -9,6 +9,7 @@ body{
     min-height: 100vh;
     background-color: var(--bg-color);
     transition: background-color 0.3s ease;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 /* Root */
@@ -42,26 +43,35 @@ body{
 
 aside{
     width: 400px;
-    min-height: 100vh;
-    transition: 0.3s ease;
+    height: 100vh;
+    max-width: 90vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: transform 0.3s ease;
     background-color: var(--aside-bg);
     color: var(--text-main);
+    z-index: 999;
+    box-shadow: 6px 0 18px rgba(0, 0, 0, 0.12);
+    scrollbar-gutter: stable;
 }
 
 .hide{
     transform: translateX(-100%);
-    position: absolute;
 }
 
 #menu-bar{
     background-color: transparent;
     border: none;
     cursor: pointer;
-    display: none;
+    display: block;
     position: fixed;
     top: 20px;
     left: 20px;
     z-index: 1000;
+    color: var(--text-main);
 }
 .main-container{
     display: flex;
@@ -250,7 +260,7 @@ p{
     font-size: small;
 }
 .FAQ span{
-    margin: 0 10px;
+    margin: 0 20px;
     color: grey;
 }
 .FAQ{
@@ -263,16 +273,7 @@ p{
      color: var(--text-main);
      gap: 10px;
 } 
-/* .mode{
-    display:flex ;
-    justify-content: space-evenly;
-    align-items: center;
-    background-color: grey;
-    width:300px ;
-    height: 100%;
-    margin: 20px 20px;
-} */
-  .mode {
+.mode {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -320,14 +321,22 @@ p{
 
 .profile{
     display: flex;
-    /* justify-content: flex-start;  */
+    flex-direction: row;
+    /* justify-content: flex-start; */
+    align-items: center;
     margin: 20px ;
     height:100px ;
     padding-bottom: 20px;
-    background-color: white; 
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.45);
+    background-color: var(--aside-bg); 
+    box-shadow: 2px 0 2px 0 rgba(79, 78, 78, 0.45);
     border-radius: 20px;
 
+}
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 15px;
 }
 img{
     margin-left: 10px ;
@@ -337,8 +346,7 @@ img{
     object-fit: cover;
 }
 .profile_name{
-    justify-content: center;
-    margin: 20px;
+    margin: 0;
     font-size: 1rem;
     font-weight: 600;
     font-family: 'Plus Jakarta Sans';
@@ -348,4 +356,177 @@ img{
     font-weight: 300;
     font-family: 'Plus Jakarta Sans';
     color: rgba(128, 128, 128, 0.77);
+}
+.profile span{
+    margin-left: auto;
+    display: flex;
+    justify-content: center; /* Centers the icon symbol within the span box */
+    align-items: center;
+    cursor: pointer;
+    color: var(--text-muted);
+}
+
+                 /* main content */
+   
+    .Topcontainer{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        border-radius: 20px;
+        width: 50%;
+        height: auto;
+        /* margin-left: 20%; */
+        padding: 30px;
+        margin: 40px auto ;
+        z-index: 2;
+        
+    }
+   .Topcontainer h3{
+    font-size: 1.8rem;
+   }
+   .Topcontainer p{
+    font-size: small;
+    color:grey ;
+    font-weight: 350;
+   }
+
+/* Ensure headings/paragraphs don't have forced right margins */
+.Topcontainer h3, 
+.Topcontainer p {
+    margin: 5px 0;
+    width: 100%;
+}
+
+/* --- Avatars: Top, slight over center --- */
+.avatars {
+    display: flex;
+    justify-content: center;
+    margin-left: 400px ;
+    margin-top: -100px;
+    width: 100%;
+}
+
+.avatars img {
+    /* justify-content: end; */
+    margin-left: -15px; /* Creates the overlapping effect */
+    border: 3px  white; /* Adds separation between overlaps */
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.avatars img:first-child {
+    margin-left: 0;
+}
+
+/* --- Odama and Active Users: Inline below avatars --- */
+.odama-stats-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 5px;
+    margin-left: 400px;
+}
+
+.odama {
+    font-size: 14px;
+    font-weight: 600;
+    color: black;
+    margin: 0; /* Remove default p margins */
+}
+
+.active-users {
+    display: flex;
+    align-items: center;
+    height: 30px; /* Reduced height */
+    padding: 5px 12px;
+    border: 1px solid #e5e7eb;
+    border-radius: 20px; /* Rounded pill shape */
+    font-size: 14px;
+    font-family: 'Plus Jakarta Sans';
+    font-weight: 600;
+    gap: 5px;
+    background-color: #f9fafb;
+    /* margin-:300px ; */
+}
+.active-users svg{
+        color: grey;
+        
+    } 
+
+/* .main{
+        display: flex;
+         flex-direction: column; 
+        justify-content: flex-start;
+         align-items: center; 
+        background-color: white;
+        border-radius: 20px;
+        width: 50%;
+        height: auto;
+        margin: 0 auto ;
+        padding: 20px;
+} */
+ .main{
+    background-color: white;
+    border-radius: 20px;
+    width: 50%;
+    height: auto;
+    margin: 0 auto;
+    padding: 30px;
+    margin-top:0 ;
+}
+
+.image{
+    display: inline-block;
+    vertical-align: top;
+    object-fit: cover;
+    padding: 2px;
+    margin-bottom: 5px;
+}
+.main h3{
+    display: inline-block;
+    margin-left: 10px;
+    margin-top: 35px;
+    font-family: 'Plus Jakarta Sans';
+    font-size: medium;
+}
+
+.span{
+    display: block;
+    margin-left: 125px;
+    margin-top: -40px;
+    font-size: 17px;
+    color: grey;
+}
+.vertical-line{
+    margin: auto;
+    margin-top: -100px;
+    width: 1px;
+    height: 100px;
+    background-color: rgb(175, 175, 175);
+}
+.score{
+    display: flex;
+    flex-direction: column ;
+    gap: 20px;
+    margin-top:-80px ;
+    margin-left: 55%;
+    padding:10px ;
+}
+.main span{
+ font-weight: 500;
+}
+.score-card{
+    display: flex;
+    flex-direction: column ;
+    gap: 20px;
+    margin-top:-90px ;
+    margin-left: 95%;
+    padding:10px ;
+}
+.score-card span{
+    font-size: 0.8em;
+    font-weight:bold;
 }
