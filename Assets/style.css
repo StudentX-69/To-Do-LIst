@@ -284,12 +284,6 @@ p{
             padding: 5px;
             transition: background-color 0.3s ease;
         }
-        /* .lightmode{
-    border-radius: 50px;
-}
-.darkmode{
-    border-radius: 50px;
-} */
  .lightmode, .darkmode {
             flex: 1;
             display: flex;
@@ -373,7 +367,9 @@ img{
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        background-color: white;
+        /* background-color: white; */
+        background-color: var(--mode-active-bg);
+        color: var(--mode-active-text);
         border-radius: 20px;
         width: 50%;
         height: auto;
@@ -457,20 +453,10 @@ img{
         
     } 
 
-/* .main{
-        display: flex;
-         flex-direction: column; 
-        justify-content: flex-start;
-         align-items: center; 
-        background-color: white;
-        border-radius: 20px;
-        width: 50%;
-        height: auto;
-        margin: 0 auto ;
-        padding: 20px;
-} */
  .main{
-    background-color: white;
+    /* background-color: white; */
+    background-color: var(--mode-active-bg);
+    color: var(--mode-active-text);
     border-radius: 20px;
     width: 50%;
     height: auto;
@@ -535,7 +521,9 @@ img{
  /* --- Task board --- */
 
 .task {
-    background-color: white;
+    /* background-color: white; */
+    background-color: var(--mode-active-bg);
+    color: var(--mode-active-text);
     border-radius: 20px;
     width: 50%;
     height:100%;;
@@ -569,11 +557,23 @@ img{
     background-color: transparent; 
     border: 1px solid rgba(173, 173, 173, 0.797);
     cursor: pointer;
+    background-color: var(--mode-active-bg);
+    color: var(--mode-active-text);
 }
 
 .focus svg {
     color: grey;
     margin-right: 10px;
+}
+#focus1{
+    cursor: pointer;
+    background-color: var(--mode-active-bg);
+    color: var(--mode-active-text);
+    border-radius: 10px; 
+    padding: 5px;
+    opacity: 0;
+    font-family: 'Plus Jakarta Sans';
+    font-weight:600 ;
 }
 
 .bars, .Assist {
@@ -680,7 +680,9 @@ input[type="checkbox"] {
 
       /* AI container */
     .AI{
-        background-color: white;
+        /* background-color: white; */
+        background-color: var(--mode-active-bg);
+        color: var(--mode-active-text);
         height: 100%;
         width: 410px;
         margin-top: -47.25%;
@@ -745,13 +747,16 @@ input[type="checkbox"] {
       .middle-head svg{
         color: #534be7;
         margin: 20px;
+        filter: drop-shadow(1px 2px 5px rgb(210, 210, 210));
       }
 
     .quotes{
        font-size: 17px;
        margin: auto;
        margin: 20px 0;
-       background-color: white;
+       /* background-color: white; */
+       background-color: var(--mode-active-bg);
+            color: var(--mode-active-text);
        border-radius: 15px;
        box-shadow: 0 1px 3px rgba(128, 128, 128, 0.177);
        padding: 10px;
