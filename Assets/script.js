@@ -64,6 +64,21 @@ let timer;
 let seconds = 0;
 let isRunning = false;
 
+function formatFocusTime(totalSeconds) {
+    const minutes = Math.floor(totalSeconds / 60);
+    const remainingSeconds = totalSeconds % 60;
+
+    if (minutes === 0) {
+        return `${remainingSeconds}s`;
+    }
+
+    if (remainingSeconds === 0) {
+        return `${minutes}m`;
+    }
+
+    return `${minutes}m ${remainingSeconds}s`;
+}
+
 // Hide stop button initially
 stopBtn.style.display = 'none';
 
@@ -78,7 +93,7 @@ focusBtn.addEventListener('click', () => {
         seconds++;
 
         focusBtn.innerHTML = `
-         ${seconds}s
+         ${formatFocusTime(seconds)}
         `;
     }, 1000);
 });
